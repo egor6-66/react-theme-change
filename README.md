@@ -10,7 +10,6 @@
 
 **Description** - 🔎 theme switcher.
 
-## [🚀🚀🚀Demo🚀🚀🚀](http://egorra0c.beget.tech/main/react-theme-change/base)
 ## [🚀🚀Codesandbox🚀🚀](https://codesandbox.io/s/react-use-file-uploader-k64526)
 
 
@@ -119,8 +118,7 @@ button {
 #### current project
 
 * **[Npm](https://www.npmjs.com/package/react-theme-change)**  
-* **[Github](https://github.com/egor6-66/react-theme-change.git)**  
-* **[Demo](http://egorra0c.beget.tech/main/react-theme-change/base)**  
+* **[Github](https://github.com/egor6-66/react-theme-change.git)**
 * **[Codesandbox](https://codesandbox.io/s/react-use-file-uploader-k64526)**  
 
 #### other
