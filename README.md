@@ -1,8 +1,18 @@
 # 🎨 react-theme-change
 
+![version](https://img.shields.io/github/package-json/v/egor6-66/react-theme-change)
+![stars](https://img.shields.io/github/stars/egor6-66/react-theme-change?style=social)
+![forks](https://img.shields.io/github/forks/egor6-66/react-theme-change?style=social)
+![last commit](https://img.shields.io/github/last-commit/egor6-66/react-theme-change/main)
+![code size](https://img.shields.io/github/languages/code-size/egor6-66/react-theme-change)
+![minzip size](https://img.shields.io/bundlephobia/minzip/react-theme-change)
+![download](https://img.shields.io/npm/dt/react-theme-change)
+
 **Description** - 🔎 theme switcher.
 
-## [🚀🚀🚀DEMO🚀🚀🚀](http://egorra0c.beget.tech/main/react-theme-change)
+## [🚀🚀🚀Demo🚀🚀🚀](http://egorra0c.beget.tech/main/react-theme-change/base)
+## [🚀🚀Codesandbox🚀🚀](https://codesandbox.io/s/react-use-file-uploader-k64526)
+
 
 ## 💿 Installation
 
@@ -12,69 +22,106 @@ npm i react-theme-change
 
 ## 💻 Example
 
-**tsx**
-```jsx
-import React from 'react';
-import ReactThemeChange from 'react-theme-change';
-import './demo.scss';
+### ts / js
 
-function Demo() {
-  const themes = {
+Can be placed along the way: src/configs/themes.ts.
+
+```ts
+import ReactThemeChange from 'react-theme-change';
+
+const base = {
+    btn_radius: '50%',
+};
+
+const themes = {
     dark: {
-      bg_0: 'rgba(21, 14, 65, 1)',
-      title: 'rgba(255, 255, 255, 1)',
+        bg_0: 'rgba(21, 14, 65, 1)',
+        title: 'rgba(255, 255, 255, 1)',
     },
     light: {
-      bg_0: 'rgba(239, 242, 247, 1)',
-      title: 'rgba(42, 49, 60, 1)',
+        bg_0: 'rgba(239, 242, 247, 1)',
+        title: 'rgba(42, 49, 60, 1)',
     },
     gray: {
-      bg_0: 'rgba(35, 42, 63, 1)',
-      title: 'rgba(255, 255, 255, 1)',
+        bg_0: 'rgba(35, 42, 63, 1)',
+        title: 'rgba(255, 255, 255, 1)',
     },
-    //more
-  };
-  
-  const useThemeChange = ReactThemeChange({
+};
+const useThemeChange = ReactThemeChange({
+    base,
     themes,
-    defaultTheme: themes.dark,
-  });
+    defaultTheme: 'light',
+});
 
-  const { theme, setTheme } = useThemeChange();
-
-  console.log(theme);
-  
-  return (
-    <div className="demo">
-      <div>current theme: {theme.name}</div>
-      <div>
-        <button onClick={() => setTheme('dark')}>dark</button>
-        <button onClick={() => setTheme('light')}>light</button>
-        <button onClick={() => setTheme('gray')}>gray</button>
-      </div>
-    </div>
-  );
-}
+export default useThemeChange;
 ```
 
-**style**
+### tsx / jsx
+
+```tsx
+import React from 'react';
+
+import useThemeChange from './config';
+import './App.scss';
+
+function App() {
+    const {theme, setTheme} = useThemeChange();
+
+    return (
+        <div className="demo">
+            <div className="themeName">current theme: {theme.name}</div>
+            <div className="btns">
+                <button onClick={() => setTheme('dark')}>dark</button>
+                <button onClick={() => setTheme('light')}>light</button>
+                <button onClick={() => setTheme('gray')}>gray</button>
+            </div>
+        </div>
+    );
+}
+
+export default App;
+```
+
+### style
 
 ```scss
+button {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--btn_radius);
+  cursor: pointer;
+}
+
 .demo {
-  margin: 0;
-  padding: 0;
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 12px;
   align-items: center;
   background-color: var(--bg_0);
   color: var(--title);
+}
+
+.themeName {
+  font-size: 40px;
+}
+
+.btns {
+  display: flex;
+  gap: 8px;
 }
 ```
 
 ## 🔗 Links
 
-* **[github-repo](https://github.com/egor6-66/react-theme-change.git)**
-* * **[demo](http://egorra0c.beget.tech/main/react-theme-change)**
+#### current project
+
+* **[Npm](https://www.npmjs.com/package/react-theme-change)**  
+* **[Github](https://github.com/egor6-66/react-theme-change.git)**  
+* **[Demo](http://egorra0c.beget.tech/main/react-theme-change/base)**  
+* **[Codesandbox](https://codesandbox.io/s/react-use-file-uploader-k64526)**  
+
+#### other
+* **[react-use-file-uploader](https://www.npmjs.com/package/react-use-file-uploader)**  
