@@ -60,7 +60,7 @@ export default useThemeChange;
 ```tsx
 import React from 'react';
 
-import useThemeChange from './config';
+import useThemeChange from './configs/themes';
 import './App.scss';
 
 function App() {
